@@ -19,6 +19,7 @@ Begin VB.Form InterfaceWindow
       _Version        =   393216
    End
    Begin VB.Timer IconLoader 
+      Enabled         =   0   'False
       Interval        =   1000
       Left            =   120
       Top             =   240
@@ -39,7 +40,7 @@ Private Sub Form_Activate()
 On Error Resume Next
    FileDialog.ShowOpen
    
-   If FileDialog.FileName = Empty Then
+   If FileDialog.FileName = vbNullString Then
       Unload Me
    Else
       IconLoader.Enabled = True
